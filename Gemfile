@@ -62,7 +62,6 @@ group :development do
   gem "better_errors"
   # gem "binding_of_caller"
   gem 'rails-footnotes', '~> 4.0' # rails generate rails_footnotes:install
-  gem "rails-erd" # rake erds or bundle exec erd
   gem 'annotate' # bundle exec annotate --exclude tests,fixtures,factories,serializers
   gem 'awesome_print', '~> 1.7', require:"ap" # ap Model.first
 end
