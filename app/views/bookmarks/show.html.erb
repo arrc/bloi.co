@@ -1,0 +1,5 @@
+<p><%= @bookmark.url %></p>
+<p><%= @bookmark.topic.name if @bookmark.topic.present? %></p>
+<p><%= @bookmark.flag.name if @bookmark.flag.present? %></p>
+
+<%= link_to "Edit", edit_bookmark_path(current_user, @bookmark) %>
