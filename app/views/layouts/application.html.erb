@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
+    <%= render "layouts/header" %>
   </head>
 
-  <body>
-    <section class="flash-messages">
-      <% flash.each do |key, value| %>
-      <section class="callout warning"><%= notice %></section>
-      <section class="callout alert"><%= alert %></section>
-      <% end %>
-    </section>
+  <body id="<%= params[:controller].parameterize %>_controller">
+    <div class="header">
+      <%= render "layouts/navbar" %>
+    </div>
 
-    <%= yield %>
 
+    <div class="row">
+
+      <section class="flash-messages">
+        <% flash.each do |key, value| %>
+        <section class="callout warning"><%= notice if flash.notice %></section>
+        <section class="callout alert"><%= alert if flash.alert %></section>
+        <% end %>
+      </section>
+
+      <section class="large-12 large-centered columns">
+        <%= yield %>
+      </section>
+
+    </div>
+
+    <div class="footer">
+      <%= render "layouts/footer" %>
+    </div>
+    <script type="text/javascript">
+      $(function(){ $(document).foundation(); });
+    </script>
   </body>
 </html>
