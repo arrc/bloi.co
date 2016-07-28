@@ -3,7 +3,7 @@ class BookmarksController < ApplicationController
 
   def index
     pp params
-    @bookmarks = Bookmark.all
+    @bookmarks = Bookmark.all.includes(:topic, :flag)
   end
 
   def show
@@ -27,6 +27,11 @@ class BookmarksController < ApplicationController
   end
 
   def update
+    if @bookmark.update(bookmark_params)
+      redirect_to bookmark_path(current_user, @bookmark), notice: "Updated succefully."
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -39,6 +44,6 @@ private
   end
 
   def bookmark_params
-    params.require(:bookmark).permit(:url, :flag_id, :topic_id, :description)
+    params.require(:bookmark).permit(:url, :flag_id, :topic_id, :topic_name, :description)
   end
 end

@@ -7,6 +7,8 @@
     <tr>
       <th>Id</th>
       <th>URL</th>
+      <th>Topic</th>
+      <th>Flag</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +18,8 @@
       <tr>
         <td><%= bookmark.id %></td>
         <td><%= bookmark.url %></td>
+        <td><%= bookmark.topic.name if bookmark.topic.present? %></td>
+        <td><%= bookmark.flag.name if bookmark.flag.present? %></td>
         <td><%= link_to 'Show', bookmark_path(current_user, bookmark) %></td>
       </tr>
     <% end %>
