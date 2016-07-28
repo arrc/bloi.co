@@ -12,8 +12,19 @@ Rails.application.routes.draw do
     delete "logout" => "users/sessions#destroy", as: :destroy_user_session
   end
 
+#
+
 # Static pages
   %w[about contact faq help].each do |page|
     get page, controller: "pages", action: page
   end
+
+  resources :bookmarks, :path_prefix => '/:username' do |bm|
+    # question.resources :answers
+  end
+
+  resources :topics, path_prefix: "/:username"
+  resources :pages, path_prefix: "/:username"
+
+  get '/:username', :controller => 'users', :action => 'show'
 end
