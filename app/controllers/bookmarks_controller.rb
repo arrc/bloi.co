@@ -1,5 +1,5 @@
 class BookmarksController < ApplicationController
-  before_action :set_aircraft, only: [:show, :edit, :update, :destroy]
+  before_action :set_bookmark, only: [:show, :edit, :update, :destroy]
 
   def index
     pp params
@@ -39,7 +39,7 @@ class BookmarksController < ApplicationController
 
 private
 
-  def set_aircraft
+  def set_bookmark
     @bookmark = Bookmark.find(params[:id])
   end
 

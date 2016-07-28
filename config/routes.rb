@@ -19,13 +19,11 @@ Rails.application.routes.draw do
     get page, controller: "pages", action: page
   end
 
-
-  resources :topics#, path_prefix: "/:username"
-  resources :pages#, path_prefix: "/:username"
-
   scope ":username" do
     get '', to: "users#show"
     resources :bookmarks
+    resources :topics
+    # resources :pages
   end
 
   # get '/:username', :controller => 'users', :action => 'show'
