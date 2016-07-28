@@ -60,7 +60,7 @@ group :development do
   gem 'bullet', '~> 5.1' # set config/environments/development.rb
   gem 'meta_request'
   gem "better_errors"
-  # gem "binding_of_caller"
+  gem "binding_of_caller"
   gem 'rails-footnotes', '~> 4.0' # rails generate rails_footnotes:install
   gem 'annotate' # bundle exec annotate --exclude tests,fixtures,factories,serializers
   gem 'awesome_print', '~> 1.7', require:"ap" # ap Model.first
