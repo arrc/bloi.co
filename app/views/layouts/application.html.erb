@@ -14,8 +14,8 @@
 
       <section class="flash-messages">
         <% flash.each do |key, value| %>
-        <section class="callout warning"><%= notice if flash.notice %></section>
-        <section class="callout alert"><%= alert if flash.alert %></section>
+        <section class="callout warning"><%= notice if flash.notice.present? %></section>
+        <section class="callout alert"><%= alert if flash.alert.present? %></section>
         <% end %>
       </section>
 

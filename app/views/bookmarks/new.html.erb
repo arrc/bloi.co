@@ -1,0 +1,8 @@
+<h3>New bookmark</h3>
+
+<%= form_for @bookmark, url: bookmarks_path do |f| %>
+  <%= f.text_field :url %>
+  <%= f.collection_radio_buttons :flag_id, Flag.all, :id, :name %>
+  <%= f.collection_select :topic_id, Topic.all, :id, :name %>
+  <%= f.submit "Create" %>
+<% end %>

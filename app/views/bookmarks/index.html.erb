@@ -1,0 +1,23 @@
+<h2>Bookmarks</h2>
+
+
+<%= link_to "Create new", new_bookmark_path(current_user) %>
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>URL</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookmarks.each do |bookmark| %>
+      <tr>
+        <td><%= bookmark.id %></td>
+        <td><%= bookmark.url %></td>
+        <td><%= link_to 'Show', bookmark_path(current_user, bookmark) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
