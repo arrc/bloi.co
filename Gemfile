@@ -9,6 +9,7 @@ gem 'chosen-rails'
 gem 'simple_form' # rails g simple_form:install --foundation
 gem "select2-rails"
 gem "selectize-rails"
+gem 'friendly_id', '~> 5.1'
 #---------------------------- CUSTOM END
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
