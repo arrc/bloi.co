@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/norman/friendly_id.git
+  revision: 8531cdce5737df541bc2dbf9c0fa3ee4824b6fc8
+  specs:
+    friendly_id (5.2.0.beta.1)
+      activerecord (>= 4.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -41,7 +48,7 @@ GEM
     annotate (2.7.1)
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 12.0)
-    arel (7.1.0)
+    arel (7.1.1)
     awesome_print (1.7.0)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -104,8 +111,6 @@ GEM
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
       sprockets-es6 (>= 0.9.0)
-    friendly_id (5.1.0)
-      activerecord (>= 4.0.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -231,7 +236,7 @@ GEM
     turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (3.0.0)
+    uglifier (3.0.1)
       execjs (>= 0.3.0, < 3)
     uniform_notifier (1.10.0)
     warden (1.2.6)
@@ -260,7 +265,7 @@ DEPENDENCIES
   compass-rails
   devise (~> 4.2)
   foundation-rails
-  friendly_id (~> 5.1)
+  friendly_id!
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
