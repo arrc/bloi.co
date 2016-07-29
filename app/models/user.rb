@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
    validates :username, :uniqueness => {:case_sensitive => false}, :format => { with: /\A[a-zA-Z0-9]+\Z/ }
 
+   mount_uploader :profile_picture, ProfileUploader
+
    def should_generate_new_friendly_id?
      new_record?
    end
