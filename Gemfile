@@ -10,7 +10,11 @@ gem 'simple_form' # rails g simple_form:install --foundation
 gem "select2-rails"
 gem "selectize-rails"
 gem 'friendly_id', github: 'norman/friendly_id'
-
+gem 'dotenv-rails'
+gem "figaro" # bundle exec figaro install
+gem "carrierwave"
+gem "fog"
+gem "mini_magick"
 #---------------------------- CUSTOM END
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
