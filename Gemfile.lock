@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/norman/friendly_id.git
-  revision: 8531cdce5737df541bc2dbf9c0fa3ee4824b6fc8
+  revision: aff0564584e84ffa505e6e278b65ca3c4ee5d698
   specs:
     friendly_id (5.2.0.beta.1)
       activerecord (>= 4.0.0)
@@ -194,7 +194,7 @@ GEM
       multi_json (~> 1.10)
     fog-local (0.3.0)
       fog-core (~> 1.27)
-    fog-openstack (0.1.9)
+    fog-openstack (0.1.10)
       fog-core (>= 1.40)
       fog-json (>= 1.0)
       ipaddress (>= 0.8)
@@ -282,7 +282,7 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mimemagic (0.3.1)
+    mimemagic (0.3.2)
     mini_magick (4.5.1)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
@@ -372,7 +372,7 @@ GEM
     sprockets (3.7.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-es6 (0.9.0)
+    sprockets-es6 (0.9.1)
       babel-source (>= 5.8.11)
       babel-transpiler
       sprockets (>= 3.0.0)
@@ -384,7 +384,7 @@ GEM
     thread_safe (0.3.5)
     tilt (2.0.5)
     trollop (2.1.2)
-    turbolinks (5.0.0)
+    turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
     tzinfo (1.2.2)

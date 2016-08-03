@@ -1,6 +1,6 @@
 class BookmarksController < ApplicationController
   before_action :set_bookmark, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   def index
     pp params
     @bookmarks = Bookmark.all.includes(:topic, :flag)
@@ -11,6 +11,10 @@ class BookmarksController < ApplicationController
 
   def new
     @bookmark = Bookmark.new
+    pp vars = request.query_parameters
+    params.each do |key,value|
+      Rails.logger.warn "Param #{key}: #{value}"
+    end
   end
 
   def create
@@ -35,6 +39,10 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
+  end
+
+  def method
+    #code
   end
 
 private
