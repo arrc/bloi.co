@@ -32,6 +32,9 @@ class User < ApplicationRecord
 
    mount_uploader :profile_picture, ProfileUploader
 
+   has_many :bookmarks, dependent: :destroy
+   has_many :topics, dependent: :destroy
+
    def should_generate_new_friendly_id?
      new_record?
    end

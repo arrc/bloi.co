@@ -14,4 +14,6 @@
 class Topic < ApplicationRecord
   has_many :bookmarks
   belongs_to :user
+
+  scope :of, ->(user) {where(user_id: user.id) if user.present?}
 end

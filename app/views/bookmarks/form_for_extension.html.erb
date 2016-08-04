@@ -1,9 +1,10 @@
+<h3>New bookmark Extension</h3>
 <div class="row">
   <div class="large-8 columns large-centered">
-    <%= form_for(bookmark, url: url) do |f| %>
+    <%= form_for(@bookmark, url: bookmarks_path(current_user)) do |f| %>
 
       <%= f.label :url %>
-      <%= f.text_field :url %>
+      <%= f.text_field :url, value: params[:url] %>
 
       <%= f.label :description %>
       <%= f.text_field :description %>

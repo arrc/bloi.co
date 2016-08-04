@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160729130901) do
+ActiveRecord::Schema.define(version: 20160804055155) do
 
   create_table "bookmarks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "url"
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 20160729130901) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+  end
+
+  create_table "hosts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "favicon"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_hosts_on_user_id", using: :btree
   end
 
   create_table "taglists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -99,6 +108,7 @@ ActiveRecord::Schema.define(version: 20160729130901) do
   add_foreign_key "bookmarks", "flags"
   add_foreign_key "bookmarks", "topics"
   add_foreign_key "bookmarks", "users"
+  add_foreign_key "hosts", "users"
   add_foreign_key "taglists", "users"
   add_foreign_key "tags", "taglists"
   add_foreign_key "tags", "users"

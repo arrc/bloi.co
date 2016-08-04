@@ -11,15 +11,23 @@ class BookmarksController < ApplicationController
 
   def new
     @bookmark = Bookmark.new
-    pp vars = request.query_parameters
-    params.each do |key,value|
-      Rails.logger.warn "Param #{key}: #{value}"
+
+    if params[:url]
+      pp "render other template"
+      Rails.logger.info "Extension template."
+      render 'bookmarks/form_for_extension', {bookmark: @bookmark}
     end
+  # the block of code below are left for future references.
+    # request.query_parameters
+    # params.each do |key,value|
+    #   Rails.logger.warn "Param from chrome -> #{key}: #{value}"
+    # end
   end
 
   def create
-    @bookmark = Bookmark.new(bookmark_params)
-    @bookmark.user_id = current_user.id
+    @bookmark = current_user.bookmarks.build(bookmark_params)
+    # @bookmark = Bookmark.new(bookmark_params)
+    # @bookmark.user_id = current_user.id
     if @bookmark.save
       redirect_to bookmark_path(current_user, @bookmark), notice: "Bookmark saved."
     else
@@ -52,6 +60,6 @@ private
   end
 
   def bookmark_params
-    params.require(:bookmark).permit(:url, :flag_id, :topic_id, :topic_name, :description)
+    params.require(:bookmark).permit(:url, :title, :flag_id, :topic_id, :topic_name, :description)
   end
 end
