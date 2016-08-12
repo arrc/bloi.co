@@ -1,0 +1,54 @@
+.bl_primary_header {
+    background-color: lighten($color-primary, 20);
+    height: 80px;
+
+    &__wrapper {
+        height: 80px;
+        line-height: 80px;
+
+        &--logo {
+            font-family: 'qs-li';
+            font-size: rem-calc(53);
+            a {
+                color: darkslategray;
+            }
+        }
+
+        &--user {
+            font-size: rem-calc(30);
+            padding-right: 10px;
+            a {
+                color: lightgray;
+            }
+        }
+    }
+}
+
+.bl_secondary_header {
+    height: 41px;
+    background-color: $color-primary;
+
+    &__wrapper {
+      // height: 42px;
+    }
+
+    .bl_top-bar__menu {
+        padding: 0 !important;
+        font-family: 'qs-reg';
+        font-size: rem-calc(16);
+
+        a {
+            color: white;
+        }
+
+        &--left {
+        }
+
+        &--right {
+          .bl_tb--right__new_bookmark {
+              font-size: rem-calc(14.8);
+              line-height: 41px;
+          }
+        }
+    }
+}

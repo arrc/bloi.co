@@ -1,0 +1,44 @@
+<div class="top-bar">
+  <section class="row">
+    <section class="large-12 large-centered columns">
+      <div class="top-bar-title">
+        <!-- <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+          <button class="menu-icon dark" type="button" data-toggle></button>
+        </span> -->
+        <strong>Bloi</strong>
+      </div>
+      <div id="responsive-menu">
+        <div class="top-bar-left">
+          <ul class="menu">
+            <li><%= link_to 'Home', root_path %></li>
+            <% if user_signed_in? %>
+              <li><%= link_to "Bookmarks", bookmarks_path(current_user) %></li>
+              <li><%= link_to "Topics", topics_path(current_user) %></li>
+              <li><%= link_to "New", new_bookmark_path(current_user) %></li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="top-bar-right">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <% if user_signed_in? %>
+              <li><strong><%= current_user.username %></strong></li>
+              <li class="has-submenu is-dropdown-submenu-parent">
+                <%= link_to 'Dashboard' %>
+                <ul class="submenu menu vertical" data-submenu>
+                  <li><%= link_to "Aircraft editor"%></li>
+                  <li><%= link_to "List"%></li>
+                </ul>
+              </li>
+              <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+              <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to 'Login', new_user_session_path %></li>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>

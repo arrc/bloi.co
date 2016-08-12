@@ -46,7 +46,7 @@
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1000);
+$global-width: rem-calc(700);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #2199e8,
@@ -559,7 +559,7 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0.5rem;
-$topbar-background: $light-gray;
+$topbar-background: $primary-color;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 1rem;
 $topbar-input-width: 200px;

@@ -10,10 +10,39 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+
  *= require select2
  *= require_self
+ *= require ionicons
  //= require foundation_and_overrides
 
  */
+ // GENERAL
+ @import "general/variables";
+ @import "general/fonts";
+ @import "general/global";
+
+
+// Foundation
 @import "foundation_and_overrides";
+
+// Layout
+@import "layouts/notifications";
+@import "layouts/body";
+@import "layouts/navbar";
+@import "layouts/content";
+
+// User
+@import "user/login";
+@import "user/signup";
+@import "user/profile";
+
+// Bookmarks
+@import "bookmarks/bookmarks";
+@import "bookmarks/bookmark";
+@import "bookmarks/form";
+
+// Topics
+@import "topics/topics";
+@import "topics/topic";
+@import "topics/form";
