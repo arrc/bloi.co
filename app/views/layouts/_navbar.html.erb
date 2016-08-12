@@ -14,8 +14,6 @@
             <div class="bl_primary_header__wrapper--user float-right">
               <% if user_signed_in? %>
                 <%= link_to edit_user_registration_path do %> <i class="ion-person"></i> <% end %>
-              <% else %>
-                <li><%= link_to 'Login', new_user_session_path %></li>
               <% end %>
             </div>
         </section>
@@ -31,17 +29,21 @@
                         <li class="<%= current_class?(bookmarks_path(current_user)) %>"><%= link_to "Bookmarks", bookmarks_path(current_user) %></li>
                         <li class="<%= current_class?(topics_path(current_user)) %>"><%= link_to "Topics", topics_path(current_user) %></li>
                       <% else %>
+                        <li>A very minimilistic and simple bookmark store.</li>
                         <li><%= link_to "Sign up", new_user_registration_path %></li>
+                        <li><%= link_to 'Login', new_user_session_path %></li>
                       <% end %>
                     </ul>
                 </div>
                 <div class="top-bar-right bl_top-bar__menu--right">
                     <ul class="menu">
+                      <% if user_signed_in? %>
                         <li class="bl_tb--right__new_bookmark <%= current_class?(new_bookmark_path(current_user)) %>">
                           <%= link_to new_bookmark_path(current_user) do %>
                             <i class="ion-plus-round"></i>
                           <% end %>
                         </li>
+                      <% end %>
                     </ul>
                 </div>
             </div>
