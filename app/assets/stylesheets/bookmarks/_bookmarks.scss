@@ -12,8 +12,20 @@
             font-size: rem-calc(16);
         }
 
-        &--flag {
+        &--flag__very-important {
             color: salmon;
+            font-size: rem-calc(10);
+            margin-right: 5px;
+        }
+
+        &--flag__important {
+            color: yellow;
+            font-size: rem-calc(10);
+            margin-right: 5px;
+        }
+
+        &--flag__normal {
+            color: gray;
             font-size: rem-calc(10);
             margin-right: 5px;
         }

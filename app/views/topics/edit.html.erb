@@ -1,6 +1,8 @@
-<h1>Bookmark edit</h1>
+<%= page_title "Bloi - topic edit" %>
 
-<%= render "form", topic: @topic, url: topic_path(current_user, @topic) %>
+<div class="row bl_topic__edit">
+  <h3>Topics edit</h3>
 
-<%= link_to 'Show', topic_path(current_user, @topic) %> |
-<%= link_to 'Back', topics_path(current_user) %>
+  <%= render "form", topic: @topic, url: topic_path(current_user, @topic) %>
+
+</div>

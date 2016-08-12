@@ -1,13 +1,34 @@
 <%= page_title "Bloi - #{@topic.name}" %>
-<p><%= @topic.name %></p>
-<p><%= @topic.description if @topic.description.present? %></p>
-<p><%= @topic.is_public if @topic.is_public.present? %></p>
 
-<ul>
-  <% @topic.bookmarks.each do |bm| %>
-    <li><%= bm.title %></li>
-  <% end %>
-</ul>
+<div class="row bl_topics__show">
 
-<%= link_to "Edit", edit_topic_path(current_user, @topic) %>
-<%= link_to 'Destroy', topic_path(current_user, @topic), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <!-- Name -->
+
+  <section class="bl_topics__show__name--wrapper clearfix">
+      <h5 class="bl_topics__show--name float-left"> <%= @topic.name %> </h5>
+      <div class="bl_topics__show--count float-right"> <%= @topic.bookmarks.count %> </div>
+  </section>
+
+  <!-- Description -->
+    <% if @topic.description.present? %>
+      <p class="bl_topics__show--description"> <%= @topic.description %> </p>
+    <% end %>
+
+  <!-- Links -->
+  <section class="bl_topics__show__links--wrapper">
+      <ul class="bl_topics__show__links--list">
+        <% @topic.bookmarks.each do |bm| %>
+          <li class="bl_topics__show__links--item"><%= link_to bm.title, bookmark_path(current_user, bm) %></li>
+        <% end %>
+      </ul>
+  </section>
+</div>
+
+
+
+<div class="bl_topics__show--actions">
+  <ul class="menu simple">
+    <li><%= link_to "Edit", edit_topic_path(current_user, @topic) %></li>
+    <li><%= link_to 'Destroy', topic_path(current_user, @topic), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  </ul>
+</div>

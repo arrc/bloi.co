@@ -1,0 +1,19 @@
+.bl_topic__form {
+  margin-top: 20px;
+  font-family: 'ws-reg';
+  color: darkgray;
+
+  label {
+    color: darken(gray, 30);
+    font-family: 'qs-reg';
+  }
+}
+
+
+.bl_topic__new, .bl_topic__edit {
+  margin-top: 40px;
+
+  h3 {
+    font-family: 'qs-reg';
+  }
+}
