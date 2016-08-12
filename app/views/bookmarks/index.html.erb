@@ -1,27 +1,43 @@
-<h2>Bookmarks</h2>
+<div class="row bl_tools__wrapper clearfix">
+    <section class="float-left">
+        <div class="bl_tools__count--wrapper">
+            <%= current_user.bookmarks.count %>
+        </div>
+    </section>
+    <section class="float-right">
+      <form action="index.html" method="post">
+        <input type="text" class="bl_tools__search" placeholder="search">
+      </form>
+    </section>
+</div>
 
 
-<%= link_to "Create new", new_bookmark_path(current_user) %>
-<table>
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>URL</th>
-      <th>Topic</th>
-      <th>Flag</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row bl_bookmarks__list">
+  <% @bookmarks.each do |bookmark| %>
+    <div class="bl_bookmarks__item">
+      <!-- Title -->
+      <% if bookmark.title.present? %>
+        <%= link_to bookmark_path(current_user, bookmark), class: "bl_bookmarks__item--a-tag" do %>
+          <h5 class="bl_bookmarks__item--title"><span class="bl_bookmarks__item--flag ion-record" title="<%= bookmark.flag.name if bookmark.flag.present? %>"></span><%= bookmark.title %></h5>
+        <% end %>
+      <% end %>
+      <!-- Url -->
+        <p class="bl_bookmarks__item--url"><a href="<%= bookmark.url %>"> <%= bookmark.url %> </a></p>
 
-  <tbody>
-    <% @bookmarks.each do |bookmark| %>
-      <tr>
-        <td><%= bookmark.id %></td>
-        <td><%= bookmark.url %></td>
-        <td><%= bookmark.topic.name if bookmark.topic.present? %></td>
-        <td><%= bookmark.flag.name if bookmark.flag.present? %></td>
-        <td><%= link_to 'Show', bookmark_path(current_user, bookmark) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <!-- Meta section -->
+        <section class="clearfix bl_bml__item--meta">
+            <div class="float-left bl_bml__item--meta__topic">
+              <% if bookmark.topic.present? %>
+                <i class="ion-share bl_bml__item--meta__topic--icon"></i>
+                <span class="bl_bml__item--meta__topic--name"><%= link_to bookmark.topic.name, topic_path(current_user, bookmark.topic) %></span>
+                <i class="ion-person bl_bml__item--meta__lock--icon"></i>
+              <% end %>
+            </div>
+
+            <div class="float-right">
+                <date><%= bookmark.created_at.strftime("%d %b. %Y") %></date>
+            </div>
+        </section>
+    </div>
+  <% end %>
+</div>

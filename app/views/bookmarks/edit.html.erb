@@ -1,6 +1,5 @@
-<h1>Bookmark edit</h1>
+<div class="row bl_bookmark__edit">
+  <h3>Bookmark edit</h3>
 
-<%= render "form", bookmark: @bookmark, url: bookmark_path(current_user, @bookmark) %>
-
-<%= link_to 'Show', bookmark_path(current_user, @bookmark) %> |
-<%= link_to 'Back', bookmarks_path(current_user) %>
+  <%= render "form", bookmark: @bookmark, url: bookmark_path(current_user, @bookmark) %>
+</div>

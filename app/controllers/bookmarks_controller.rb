@@ -3,7 +3,7 @@ class BookmarksController < ApplicationController
   before_action :authenticate_user!
   def index
     pp params
-    @bookmarks = Bookmark.all.includes(:topic, :flag)
+    @bookmarks = current_user.bookmarks.all.includes(:topic, :flag)
   end
 
   def show

@@ -8,4 +8,13 @@ module ApplicationHelper
     return 'bl_active' if request.path == test_path
     ''
   end
+
+# http://stackoverflow.com/a/3708730
+  def controller?(*controller)
+    controller.include?(params[:controller])
+  end
+
+  def action?(*action)
+    action.include?(params[:action])
+  end
 end

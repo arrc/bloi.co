@@ -1,26 +1,29 @@
-<h3>New bookmark Extension</h3>
-<div class="row">
-  <div class="large-8 columns large-centered">
-    <%= form_for(@bookmark, url: bookmarks_path(current_user)) do |f| %>
+<div class="row bl_bookmark__new--extension">
 
-      <%= f.label :url %>
-      <%= f.text_field :url, value: params[:url] %>
+    <div class="bl_bookmark__new--extension__form">
+      <%= form_for(@bookmark, url: bookmarks_path(current_user)) do |f| %>
 
-      <%= f.label :description %>
-      <%= f.text_field :description %>
+        <%= f.label :title %>
+        <%= f.text_field :title, value: params[:title], placeholder: "title" %>
 
-      <%= f.label :flag %>
-      <%= f.collection_radio_buttons :flag_id, Flag.all, :id, :name%>
+        <%= f.label :url %>
+        <%= f.text_field :url, value: params[:url], placeholder: "url" %>
 
-      <%= f.label :topic %>
-      <%= f.collection_select :topic_id, Topic.where(user_id: current_user), :id, :name, {include_blank: true}, {id: "topic-select"} %>
+        <%= f.label :description %>
+        <%= f.text_field :description, placeholder: "description" %>
 
-      <%#= f.collection_select :topic_name, Topic.where(user_id: current_user), :name, :name, {include_blank: true}, {id: "topic-select"} %>
+        <%= f.label :flag %>
+        <%= f.collection_radio_buttons :flag_id, Flag.all, :id, :name%>
 
-      <%= f.hidden_field :favicon, value: params[:favIcon] %>
-      <%= f.hidden_field :favicon, value: params[:title] %>
-      <br>
-      <%= f.submit "Create", { class: "button success"} %>
-    <% end %>
-  </div>
+        <%= f.label :topic %>
+        <%= f.collection_select :topic_id, Topic.where(user_id: current_user), :id, :name, {include_blank: true}, {id: "topic-select"} %>
+
+        <%#= f.collection_select :topic_name, Topic.where(user_id: current_user), :name, :name, {include_blank: true}, {id: "topic-select"} %>
+
+        <%= f.hidden_field :favicon, value: params[:favIcon] %>
+        <%= f.hidden_field :favicon, value: params[:title] %>
+        <br>
+        <%= f.submit "Create", { class: "button success"} %>
+      <% end %>
+    </div>
 </div>

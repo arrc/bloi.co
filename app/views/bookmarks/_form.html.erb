@@ -1,18 +1,21 @@
-<div class="row">
-  <div class="large-8 columns large-centered">
+<div class="bl_bookmark__form">
     <%= form_for(bookmark, url: url) do |f| %>
 
+      <%= f.label :title %>
+      <%= f.text_field :title, placeholder: "title" %>
+
+
       <%= f.label :url %>
-      <%= f.text_field :url %>
+      <%= f.text_field :url, placeholder: "url"  %>
 
       <%= f.label :description %>
-      <%= f.text_field :description %>
+      <%= f.text_field :description, placeholder: "description"  %>
 
       <%= f.label :flag %>
       <%= f.collection_radio_buttons :flag_id, Flag.all, :id, :name%>
 
       <%= f.label :topic %>
-      <%= f.collection_select :topic_id, Topic.where(user_id: current_user), :id, :name, {include_blank: true}, {id: "topic-select"} %>
+      <%= f.collection_select :topic_id, Topic.where(user_id: current_user), :id, :name , {include_blank: true}, {id: "topic-select"} %>
 
       <%#= f.collection_select :topic_name, Topic.where(user_id: current_user), :name, :name, {include_blank: true}, {id: "topic-select"} %>
 
@@ -21,5 +24,4 @@
       <br>
       <%= f.submit "Create", { class: "button success"} %>
     <% end %>
-  </div>
 </div>

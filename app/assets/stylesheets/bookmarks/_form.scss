@@ -1,0 +1,22 @@
+.bl_bookmark__form {
+  margin-top: 20px;
+  font-family: 'ws-reg';
+  color: darkgray;
+
+  label {
+    color: darken(gray, 30);
+    font-family: 'qs-reg';
+  }
+}
+
+.bl_bookmark__new--extension {
+
+}
+
+.bl_bookmark__new, .bl_bookmark__edit, .bl_bookmark__new--extension {
+  margin-top: 40px;
+
+  h3 {
+    font-family: 'qs-reg';
+  }
+}

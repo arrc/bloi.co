@@ -22,12 +22,11 @@
         <% end %>
       </section>
 
-      <section class="large-12 large-centered columns">
-        <p>fds
-          <i class="ion-ionic"></i>
-        </p>
-        <%= yield %>
-      </section>
+      <!-- <section class="large-12 large-centered columns">
+        <%#= yield %>
+      </section> -->
+
+      <%= yield %>
 
     </div>
 
@@ -38,11 +37,11 @@
       $(function(){ $(document).foundation(); });
 
       // select2
-      $(document).ready(function() {
-        $("#topic-select").select2({
-          tags: true
-        });
-      });
+      // $(document).ready(function() {
+      //   $("#topic-select").select2({
+      //     tags: false
+      //   });
+      // });
     </script>
   </body>
 </html>
