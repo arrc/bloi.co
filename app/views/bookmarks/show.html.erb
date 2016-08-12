@@ -1,5 +1,36 @@
-<p><%= @bookmark.url %></p>
-<p><%= @bookmark.topic.name if @bookmark.topic.present? %></p>
-<p><%= @bookmark.flag.name if @bookmark.flag.present? %></p>
+<div class="row bl_bookmarks__show">
 
-<%= link_to "Edit", edit_bookmark_path(current_user, @bookmark) %>
+  <!-- Title -->
+  <% if @bookmark.title.present? %>
+      <h5 class="bl_bookmarks__show--title"><%= @bookmark.title %></h5>
+  <% end %>
+  <!-- Url -->
+    <p class="bl_bookmarks__show--url"><a href="<%= @bookmark.url %>"> <%= @bookmark.url %> </a></p>
+
+  <!-- Description -->
+    <% if @bookmark.description.present? %>
+      <p class="bl_bookmarks__show--description"> <%= @bookmark.description %> </p>
+    <% end %>
+
+  <!-- Meta section -->
+    <section class="clearfix bl_bookmarks__show--meta">
+        <div class="float-left bl_bookmarks__show--meta__topic">
+          <% if @bookmark.topic.present? %>
+            <i class="ion-share bl_bookmarks__show--meta__topic--icon"></i>
+            <span class="bl_bookmarks__show--meta__topic--name"><%= link_to @bookmark.topic.name, topic_path(current_user, @bookmark.topic) %></span>
+            <i class="ion-person bl_bookmarks__show--meta__lock--icon"></i>
+          <% end %>
+        </div>
+
+        <div class="float-right">
+            <date><%= @bookmark.created_at.strftime("%d %b %Y") %></date>
+        </div>
+    </section>
+</div>
+
+<div class="bl_bookmarks__show--actions">
+  <ul class="menu simple">
+    <li><a href="#">Edit</a></li>
+    <li><a href="#">Delete</a></li>
+  </ul>
+</div>

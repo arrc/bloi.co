@@ -4,7 +4,11 @@
         <section class="bl_primary_header__wrapper clearfix">
             <div class="bl_primary_header__wrapper--logo float-left">
                 <!-- <a href="/">Bloi</a> -->
-                <%= link_to 'Bloi', root_path %>
+                <% if user_signed_in? %>
+                  <%= link_to 'Bloi', bookmarks_path(current_user) %>
+                <% else %>
+                  <%= link_to 'Bloi', root_path %>
+                <% end %>
             </div>
 
             <div class="bl_primary_header__wrapper--user float-right">

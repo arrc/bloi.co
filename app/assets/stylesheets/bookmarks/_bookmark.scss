@@ -1,0 +1,54 @@
+.bl_bookmarks__show {
+
+        padding: 10px;
+        margin: 50px 0 10px 0;
+        border: 1px solid lighten($color-primary, 20);
+        border-radius: 4px;
+        color: lighten($color-secondary, 20);
+
+         &--title {
+            font-family: 'qs-reg';
+            color: $color-secondary;
+            font-size: rem-calc(16);
+        }
+
+        &--flag {
+            color: salmon;
+            font-size: rem-calc(10);
+            margin-right: 5px;
+        }
+
+        &--description {
+          font-family: 'ws-reg';
+          color: lightgray;
+          font-size: rem-calc(14);
+        }
+
+        &--url {
+            margin-bottom: 10px;
+            a {
+                font-family: 'ws-li';
+                font-style: italic;
+                font-size: rem-calc(11);
+                color: lighten($color-secondary, 20);
+            }
+        }
+
+        &--actions {
+          font-size: rem-calc(12);
+          a {
+            color: gray;
+          }
+        }
+
+        .bl_bookmarks__show--meta {
+            a, date {
+                font-size: rem-calc(10);
+                font-family: 'qs-reg';
+                color: gray;
+            }
+
+            vertical-align: baseline;
+
+        }
+}

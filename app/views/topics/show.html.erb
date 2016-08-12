@@ -1,5 +1,12 @@
+<%= page_title "Bloi - #{@topic.name}" %>
 <p><%= @topic.name %></p>
 <p><%= @topic.description if @topic.description.present? %></p>
 <p><%= @topic.is_public if @topic.is_public.present? %></p>
+
+<ul>
+  <% @topic.bookmarks.each do |bm| %>
+    <li><%= bm.title %></li>
+  <% end %>
+</ul>
 
 <%= link_to "Edit", edit_topic_path(current_user, @topic) %>
