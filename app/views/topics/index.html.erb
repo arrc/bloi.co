@@ -1,29 +1,37 @@
 <%= page_title "Topics" %>
-<h2>Topics</h2>
 
+<div class="row bl_tools__wrapper clearfix">
+    <section class="float-left">
+        <div class="bl_tools__count--wrapper">
+            <span><%= current_user.topics.count %></span>
+        </div>
+        <div class="bl_tools__new--wrapper">
+          <%= link_to "Create new topic", new_topic_path(current_user) %>
+            <!-- <a href="">Create new topic</a> -->
+        </div>
+    </section>
+    <section class="float-right">
+        <input type="text" class="bl_tools__search" placeholder="search">
+    </section>
+</div>
 
-<%= link_to "Create new", new_topic_path(current_user) %>
-<table>
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Is public</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row bl_topics__list">
+   <% @topics.each do |topic| %>
+    <div class="bl_topics__item">
+        <section class="bl_tp__title--wrapper clearfix">
+          <%= link_to topic_path(current_user, topic), class: "bl_tp__title--a-tag" do %>
+            <h5 class="bl_tp__title float-left"> <%= topic.name %> </h5>
+          <% end %>
+            <div class="bl_tp__count float-right"> <%= topic.bookmarks.count %> </div>
+        </section>
 
-  <tbody>
-    <% @topics.each do |topic| %>
-      <tr>
-        <td><%= topic.id %></td>
-        <td><%= topic.name %></td>
-        <td><%= topic.description if topic.description.present?  %></td>
-        <td><%= topic.is_public if topic.is_public.present? %></td>
-        <td><%= link_to 'Show', topic_path(current_user, topic) %></td>
-        <td><%= link_to 'Destroy', topic_path(current_user, topic), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <section class="bl_tp__links--wrapper">
+            <ul class="bl_tp__links--list">
+              <% topic.bookmarks.each do |bm| %>
+                <li class="bl_tp__links--item"><%= link_to bm.title, bookmark_path(current_user, bm) %></li>
+              <% end %>
+            </ul>
+        </section>
+    </div>
     <% end %>
-  </tbody>
-</table>
+</div>
