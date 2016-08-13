@@ -16,6 +16,12 @@
 </div>
 
 <div class="row bl_topics__list">
+  <% if @topics.empty? %>
+    <div class="bl_topics__empty">
+      <h4 class="bl_tp_empty__lead">You don't seem to have any topics.</h4>
+      <p class="bl_tp_empty__link"><%= link_to "Create new", new_topic_path(current_user) %></p>
+    </div>
+  <% end %>
    <% @topics.each do |topic| %>
     <div class="bl_topics__item">
         <section class="bl_tp__title--wrapper clearfix">
