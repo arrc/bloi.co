@@ -3,7 +3,7 @@ class BookmarksController < ApplicationController
   before_action :authenticate_user!
   def index
     pp params
-    @bookmarks = current_user.bookmarks.friendly.all.includes(:topic, :flag)
+    @bookmarks = current_user.bookmarks.friendly.all.includes(:topic, :flag).order('created_at DESC').page(params[:page]).per_page(10)
   end
 
   def show
