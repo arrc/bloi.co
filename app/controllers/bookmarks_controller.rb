@@ -3,7 +3,7 @@ class BookmarksController < ApplicationController
   before_action :authenticate_user!
   def index
     pp params
-    @bookmarks = current_user.bookmarks.all.includes(:topic, :flag)
+    @bookmarks = current_user.bookmarks.friendly.all.includes(:topic, :flag)
   end
 
   def show
@@ -56,10 +56,10 @@ class BookmarksController < ApplicationController
 private
 
   def set_bookmark
-    @bookmark = Bookmark.find(params[:id])
+    @bookmark = Bookmark.friendly.find(params[:id])
   end
 
   def bookmark_params
-    params.require(:bookmark).permit(:url, :title, :flag_id, :topic_id, :topic_name, :description)
+    params.require(:bookmark).permit(:url, :title, :flag_id, :topic_id, :topic_name, :description, :slug)
   end
 end

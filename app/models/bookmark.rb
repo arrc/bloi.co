@@ -14,11 +14,14 @@
 #
 
 class Bookmark < ApplicationRecord
+  extend FriendlyId
   attr_accessor :topic_name
   belongs_to :flag
   belongs_to :topic
   belongs_to :user
   belongs_to :host
+
+  friendly_id :title, use: [:slugged, :finders]
 
   # def topic_name
   #   topic.try(:name)
