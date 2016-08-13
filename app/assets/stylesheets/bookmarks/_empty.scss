@@ -1,0 +1,26 @@
+.bl_bookmarks__empty {
+  border: 1px solid $primary-color;
+  border-radius: 4px;
+  text-align: center;
+  padding: 30px;
+
+  .bl_bm_empty__lead {
+    color: gray;
+    font-size: rem-calc(30);
+    font-family: 'qs-li';
+  }
+
+  .bl_bm_empty__store {
+    // width: 75%;
+    img {
+
+    }
+  }
+
+  .bl_bm_empty__link {
+    color: darkgray;
+    font-size: rem-calc(14);
+    font-family: 'ws-reg';
+  }
+
+}
