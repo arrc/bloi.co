@@ -1,0 +1,66 @@
+.bl_user_profile {
+  margin-top: 50px;
+  font-family: 'qs-reg';
+  color: darkgray;
+
+  .divider {
+    border-color: $primary-color;
+    border-width: 1px;
+  }
+  //
+  &--heading_wrapper {
+    font-family: 'qs-reg';
+  }
+
+  &--heading {
+    font-family: 'qs-reg';
+    color: darkgray;
+  }
+
+  &--info_wrapper {
+    margin-top: 30px;
+    height: 150px;
+
+    &__details {
+      min-width: 500px;
+      font-family: 'ws-reg';
+      height: 150px;
+      line-height: 150px;
+      .bl_user_username {
+        font-size: rem-calc(40);
+      }
+      .bl_user_email {
+        font-size: rem-calc(16);
+      }
+
+    }
+
+    &__image {
+      // width: 150px;
+      // height: 150px;
+      // border-radius: 100px;
+      // border: 1px solid $primary-color;
+      // border-radius: 100px;
+      img {
+        width: 150px;
+        height: 150px;
+        border: 1px solid $primary-color;
+        padding: 1px;
+        border-radius: 100px;
+      }
+
+    }
+  }
+
+  &--form_wrapper {
+    label {
+      color: darkgray;
+
+    }
+    .help-text {
+      font-family: 'ws-reg';
+      font-style: italics;
+      color: lightgray;
+    }
+  }
+}
