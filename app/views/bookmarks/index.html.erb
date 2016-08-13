@@ -30,9 +30,9 @@
         <section class="clearfix bl_bml__item--meta">
             <div class="float-left bl_bml__item--meta__topic">
               <% if bookmark.topic.present? %>
-                <i class="ion-share bl_bml__item--meta__topic--icon"></i>
+                <i class="ion-ios-list-outline bl_bml__item--meta__topic--icon" title="Topic name"></i>
                 <span class="bl_bml__item--meta__topic--name"><%= link_to bookmark.topic.name, topic_path(current_user, bookmark.topic) %></span>
-                <i class="ion-person bl_bml__item--meta__lock--icon"></i>
+                <i class="ion-ios-locked bl_bml__item--meta__lock--icon" title="This topic is private"></i>
               <% end %>
             </div>
 
