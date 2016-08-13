@@ -27,6 +27,7 @@
         <section class="bl_tp__title--wrapper clearfix">
           <%= link_to topic_path(current_user, topic), class: "bl_tp__title--a-tag" do %>
             <h5 class="bl_tp__title float-left"> <%= topic.name %> </h5>
+            <% if topic.is_public? %> <i class="ion-ios-people bl_tp__title--public-icon" title="This topic is public"></i> <% end %>
           <% end %>
             <div class="bl_tp__count float-right"> <%= topic.bookmarks.count %> </div>
         </section>

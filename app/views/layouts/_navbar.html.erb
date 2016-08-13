@@ -29,7 +29,7 @@
                         <li class="<%= current_class?(bookmarks_path(current_user)) %>"><%= link_to "Bookmarks", bookmarks_path(current_user) %></li>
                         <li class="<%= current_class?(topics_path(current_user)) %>"><%= link_to "Topics", topics_path(current_user) %></li>
                       <% else %>
-                        <li>A very minimilistic and simple bookmark store.</li>
+                        <li class="bl_tb_intro">A very minimilistic and simple bookmark store.</li>
                         <li><%= link_to "Sign up", new_user_registration_path %></li>
                         <li><%= link_to 'Login', new_user_session_path %></li>
                       <% end %>

@@ -17,6 +17,11 @@
             font-weight: bold;
             font-size: rem-calc(16);
             a { color: gray; }
+
+            &--public-icon {
+              margin-left: 10px;
+              color: gray;
+            }
         }
 
         &__count {

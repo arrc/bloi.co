@@ -10,6 +10,11 @@
     font-weight: bold;
     font-size: rem-calc(16);
     color: gray;
+
+    &--public-icon {
+      margin-left: 10px;
+      color: gray;
+    }
  }
 
  &--count {

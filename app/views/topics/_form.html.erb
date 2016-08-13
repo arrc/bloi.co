@@ -6,6 +6,8 @@
 
       <%= f.label "Topic description" %>
       <%= f.text_field :description, placeholder: "description" %>
+
+      <%= f.check_box :is_public, id: "topic_is_pulbic" %><label for="topic_is_pulbic">Make it public?</label>
       <br>
       <%= f.submit "Create", class: "button secondary" %>
     <% end %>

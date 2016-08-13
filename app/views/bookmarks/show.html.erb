@@ -18,9 +18,9 @@
     <section class="clearfix bl_bookmarks__show--meta">
         <div class="float-left bl_bookmarks__show--meta__topic">
           <% if @bookmark.topic.present? %>
-            <i class="ion-share bl_bookmarks__show--meta__topic--icon"></i>
+            <i class="ion-ios-list-outline bl_bookmarks__show--meta__topic--icon"></i>
             <span class="bl_bookmarks__show--meta__topic--name"><%= link_to @bookmark.topic.name, topic_path(current_user, @bookmark.topic) %></span>
-            <i class="ion-person bl_bookmarks__show--meta__lock--icon"></i>
+            <% if @bookmark.topic.is_public? %> <i class="ion-ios-people bl_bml__item--meta__lock--icon" title="This topic is public"></i> <% end %>
           <% end %>
         </div>
 

@@ -14,15 +14,14 @@
     <div class="row">
 
       <section class="flash-messages">
-        <% flash.each do |name, msg| %>
-          <% if flash.alert.present? %>
+          <% if alert  %>
             <section class="callout alert" data-closable>
               <%= alert %>
               <button class="close-button" type="button" data-close>
                 <span aria-hidden="true">&times;</span>
               </button>
             </section>
-          <% elsif flash.notice.present?  %>
+          <% elsif notice   %>
             <section class="callout success" data-closable>
               <%= notice %>
               <button class="close-button" type="button" data-close>
@@ -30,7 +29,6 @@
               </button>
             </section>
           <% end %>
-        <% end %>
       </section>
 
       <!-- <section class="large-12 large-centered columns">

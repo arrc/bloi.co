@@ -48,7 +48,21 @@
                 color: gray;
             }
 
-            vertical-align: baseline;
+            &__topic {
+                 vertical-align: bottom;
+             }
+
+             &__topic--name {
+                 line-height: 10px;
+                 vertical-align: baseline;
+             }
+
+             &__topic--icon, &__lock--icon {
+                 font-size: 11px;
+                 line-height: 11px;
+                 padding-bottom: 3px;
+                 vertical-align: text-bottom;
+             }
 
         }
 }

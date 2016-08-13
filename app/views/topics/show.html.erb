@@ -6,6 +6,7 @@
 
   <section class="bl_topics__show__name--wrapper clearfix">
       <h5 class="bl_topics__show--name float-left"> <%= @topic.name %> </h5>
+      <% if @topic.is_public? %> <i class="ion-ios-people bl_topics__show--name--public-icon" title="This topic is public"></i> <% end %>
       <div class="bl_topics__show--count float-right"> <%= @topic.bookmarks.count %> </div>
   </section>
 
