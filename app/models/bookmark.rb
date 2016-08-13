@@ -23,6 +23,13 @@ class Bookmark < ApplicationRecord
 
   friendly_id :title, use: [:slugged, :finders]
 
+  validates_presence_of :title, message: "Title is required."
+  validates_presence_of :url, message: "url is required."
+
+  validates :title, presence: { message: "title cannot be blank." }
+  validates :url, presence: { message: "url cannot be blank." }
+  validates :url, uniqueness: { scope: [:user_id, :topic_id] }
+
   # def topic_name
   #   topic.try(:name)
   # end
