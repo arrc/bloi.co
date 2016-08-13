@@ -17,4 +17,12 @@ module ApplicationHelper
   def action?(*action)
     action.include?(params[:action])
   end
+
+  def flash_message_class(flash)
+    if flash.alert.present?
+      "callout alert"
+    elsif flash.notice.present?
+      "callout success"
+    end
+  end
 end

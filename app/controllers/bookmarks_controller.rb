@@ -31,7 +31,7 @@ class BookmarksController < ApplicationController
     if @bookmark.save
       redirect_to bookmark_path(current_user, @bookmark), notice: "Bookmark saved."
     else
-      render :new
+      render :new, error: "Fix the errors."
     end
   end
 
@@ -42,7 +42,7 @@ class BookmarksController < ApplicationController
     if @bookmark.update(bookmark_params)
       redirect_to bookmark_path(current_user, @bookmark), notice: "Updated succefully."
     else
-      render :edit
+      render :edit, error: "Fix the errors"
     end
   end
 

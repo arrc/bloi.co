@@ -16,6 +16,7 @@ gem "carrierwave"
 gem "fog"
 gem "mini_magick"
 gem 'rails-assets-ionicons', source: 'https://rails-assets.org'
+gem 'rails-assets-noty', source: 'https://rails-assets.org'
 #---------------------------- CUSTOM END
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
