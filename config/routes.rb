@@ -42,6 +42,8 @@
 #
 
 Rails.application.routes.draw do
+  get 'users/show'
+
   root 'pages#home'
 
 # Devise

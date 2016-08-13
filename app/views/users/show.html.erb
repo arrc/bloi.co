@@ -1,0 +1,44 @@
+<%= page_title "Bloi - #{@user.username}" %>
+<div class="row bl_public_profile">
+
+  <div class="bl_user_profile--info_wrapper clearfix">
+      <section class="bl_user_profile--info_wrapper__image float-left">
+        <% if @user.profile_picture.url.present? %>
+          <%= image_tag(@user.profile_picture.small.url) %>
+        <% else %>
+          <%= image_tag("user.png") %>
+        <% end %>
+      </section>
+      <section class="bl_user_profile--info_wrapper__details float-right">
+          <p class="bl_user_username"><%= @user.username %></p>
+          <p class="bl_user_email"><%= @user.email %></p>
+      </section>
+  </div>
+
+</div>
+
+<hr class="row divider">
+
+<div class="row bl_pb_topics--wrapper">
+  <% if @topics.empty? %>
+    <div class="bl_pb_topics__empty">
+      <h4 class="bl_pb_topics_empty__lead">This user doesn't seem to have made any topics public.</h4>
+    </div>
+  <% end %>
+   <% @topics.each do |topic| %>
+    <div class="bl_pb_topics__item">
+        <section class="bl_pb_topics__title--wrapper clearfix">
+            <h5 class="bl_pb_topics__title float-left"> <%= topic.name %> </h5>
+            <div class="bl_pb_topics__count float-right"> <%= topic.bookmarks.count %> </div>
+        </section>
+
+        <section class="bl_pb_topics__links--wrapper">
+            <ul class="bl_pb_topics__links--list">
+              <% topic.bookmarks.each do |bm| %>
+                <li class="bl_pb_topics__links--item"><%= link_to bm.title, bm.url %></li>
+              <% end %>
+            </ul>
+        </section>
+    </div>
+    <% end %>
+</div>
