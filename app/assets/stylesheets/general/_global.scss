@@ -2,3 +2,19 @@
     border-bottom: solid lighten($color-primary, 30);
     border-width: medium;
 }
+
+.divider {
+  border-color: $primary-color;
+  border-width: 1px;
+}
+
+// simple_form_for styles for error notification.
+.alert-box {
+  font-weight: bold;
+  color: salmon;
+}
+
+// simple_form_for styles for error fields.
+.error {
+  color: red;
+}

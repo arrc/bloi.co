@@ -20,11 +20,13 @@
  // GENERAL
  @import "general/variables";
  @import "general/fonts";
- @import "general/global";
 
 
 // Foundation
 @import "foundation_and_overrides";
+
+// General
+ @import "general/global";
 
 // Layout
 @import "layouts/notifications";

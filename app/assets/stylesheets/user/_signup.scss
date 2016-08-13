@@ -1,0 +1,22 @@
+.bl_user_signup, .bl_user_login {
+  margin-top: 50px;
+  font-family: 'qs-reg';
+  color: darkgray;
+
+  h3 {
+    // font-size: rem-calc(16);
+    font-family: 'qs-reg';
+  }
+
+  &--form_wrapper {
+    label {
+      color: darkgray;
+
+    }
+    .help-text {
+      font-family: 'ws-reg';
+      font-style: italics;
+      color: lightgray;
+    }
+  }
+}
