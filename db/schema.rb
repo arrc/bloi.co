@@ -12,14 +12,17 @@
 
 ActiveRecord::Schema.define(version: 20160813153343) do
 
-  create_table "bookmarks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "bookmarks", force: :cascade do |t|
     t.string   "url"
     t.string   "title"
-    t.text     "description", limit: 65535
+    t.text     "description"
     t.integer  "flag_id"
     t.integer  "topic_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "user_id"
     t.string   "slug"
     t.index ["flag_id"], name: "index_bookmarks_on_flag_id", using: :btree
@@ -28,13 +31,13 @@ ActiveRecord::Schema.define(version: 20160813153343) do
     t.index ["user_id"], name: "index_bookmarks_on_user_id", using: :btree
   end
 
-  create_table "flags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "flags", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "friendly_id_slugs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
     t.string   "sluggable_type", limit: 50
@@ -46,7 +49,7 @@ ActiveRecord::Schema.define(version: 20160813153343) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
-  create_table "hosts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "hosts", force: :cascade do |t|
     t.string   "name"
     t.string   "favicon"
     t.integer  "user_id"
@@ -55,39 +58,19 @@ ActiveRecord::Schema.define(version: 20160813153343) do
     t.index ["user_id"], name: "index_hosts_on_user_id", using: :btree
   end
 
-  create_table "taglists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "topics", force: :cascade do |t|
     t.string   "name"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_taglists_on_user_id", using: :btree
-  end
-
-  create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id"
-    t.integer  "taglist_id"
-    t.string   "taggable_type"
-    t.integer  "taggable_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["taggable_type", "taggable_id"], name: "index_tags_on_taggable_type_and_taggable_id", using: :btree
-    t.index ["taglist_id"], name: "index_tags_on_taglist_id", using: :btree
-    t.index ["user_id"], name: "index_tags_on_user_id", using: :btree
-  end
-
-  create_table "topics", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.text     "description", limit: 65535
+    t.text     "description"
     t.boolean  "is_public"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "user_id"
     t.string   "slug"
     t.index ["slug"], name: "index_topics_on_slug", unique: true, using: :btree
     t.index ["user_id"], name: "index_topics_on_user_id", using: :btree
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "username",               default: "", null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -113,8 +96,5 @@ ActiveRecord::Schema.define(version: 20160813153343) do
   add_foreign_key "bookmarks", "topics"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "hosts", "users"
-  add_foreign_key "taglists", "users"
-  add_foreign_key "tags", "taglists"
-  add_foreign_key "tags", "users"
   add_foreign_key "topics", "users"
 end

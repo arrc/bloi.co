@@ -8,7 +8,7 @@
 
          &--title {
             font-family: 'qs-reg';
-            color: $color-secondary;
+            color: darken($color-primary, 10);
             font-size: rem-calc(16);
         }
 

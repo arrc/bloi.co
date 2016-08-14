@@ -28,8 +28,8 @@ class Bookmark < ApplicationRecord
   validates :url, uniqueness: { scope: [:user_id, :topic_id], message: "you've already bookmarked this page." }
 
   def self.search(search)
-    where("title LIKE ?", "%#{search}%")
-    where("url LIKE ?", "%#{search}%")
+    where("title ILIKE ?", "%#{search}%")
+    where("url ILIKE ?", "%#{search}%")
   end
 
   # def topic_name

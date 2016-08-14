@@ -9,7 +9,7 @@ class TopicsController < ApplicationController
     # TODO - create scopes
     @topics = current_user.topics.includes(:bookmarks)
     if params[:search]
-      @topics = @topics.where("name like ?", "%#{params[:search]}%")
+      @topics = @topics.where("name ilike ?", "%#{params[:search]}%")
     else
       @topics
     end
