@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.3.1'
 
 #---------------------------- CUSTOM
 gem 'devise', '~> 4.2' # rails g devise:install
@@ -18,6 +19,7 @@ gem "mini_magick"
 gem 'rails-assets-ionicons', source: 'https://rails-assets.org'
 gem 'rails-assets-noty', source: 'https://rails-assets.org'
 gem 'will_paginate'
+gem 'unicorn', group: :production
 #---------------------------- CUSTOM END
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -48,7 +50,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
