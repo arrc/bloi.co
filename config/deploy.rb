@@ -27,7 +27,7 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets}
 # set :pty, true
 
 # Default value for :linked_files is []
-# append :linked_files, 'config/database.yml', 'config/secrets.yml'
+append :linked_files, 'config/database.yml', 'config/secrets.yml', 'config/application.yml'
 
 # Default value for linked_dirs is []
 # append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
@@ -37,7 +37,7 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets}
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
-
+# before 'deploy:assets:precompile', "deploy:symlink_config_files"
 namespace :deploy do
   %w[start stop restart].each do |command|
     desc "Manage Unicorn"
@@ -51,17 +51,17 @@ namespace :deploy do
   desc "Symlink shared config files"
   task :symlink_config_files do
       # run "#{ try_sudo } ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
-      run "ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
-      `puts "replaced database.yml with shared copy"`
-      run "ln -s #{ deploy_to }/shared/config/secrets.yml #{ current_path }/config/secrets.yml"
-      `puts "replaced secrets.yml with shared copy"`
+      on roles :app do
+        execute "ln -s #{ deploy_to }/shared/config/database.yml #{ release_path }/config/database.yml"
+        execute "ln -s #{ deploy_to }/shared/config/secrets.yml #{ release_path }/config/secrets.yml"
+      end
   end
 
   after :publishing, :restart
-  after :deploy, "deploy:symlink_config_files"
-  after :restart, :clear_cache do
-    on roled(:web), in: :groups, limit: 3, wait: 10 do
-
-    end
-  end
+  # before :deploy, "deploy:symlink_config_files"
+  # after :restart, :clear_cache do
+  #   on role(:web), in: :groups, limit: 3, wait: 10 do
+  #
+  #   end
+  # end
 end
