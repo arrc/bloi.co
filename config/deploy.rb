@@ -48,11 +48,20 @@ namespace :deploy do
     end
   end
 
-  after :publishing, :restart
+  desc "Symlink shared config files"
+  task :symlink_config_files do
+      # run "#{ try_sudo } ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
+      run "ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
+      `puts "replaced database.yml with shared copy"`
+      run "ln -s #{ deploy_to }/shared/config/secrets.yml #{ current_path }/config/secrets.yml"
+      `puts "replaced secrets.yml with shared copy"`
+  end
 
+  after :publishing, :restart
+  after :deploy, "deploy:symlink_config_files"
   after :restart, :clear_cache do
     on roled(:web), in: :groups, limit: 3, wait: 10 do
-      
+
     end
   end
 end
