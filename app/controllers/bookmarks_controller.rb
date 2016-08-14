@@ -1,9 +1,15 @@
 class BookmarksController < ApplicationController
   before_action :set_bookmark, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+
   def index
-    pp params
-    @bookmarks = current_user.bookmarks.friendly.all.includes(:topic, :flag).order('created_at DESC').page(params[:page]).per_page(10)
+    # TODO - consider moving seach and paging code to model
+    @bookmarks = current_user.bookmarks
+    if params[:search]
+      @bookmarks = @bookmarks.search(params[:search]).includes(:topic, :flag).order("created_at DESC").page(params[:page]).per_page(10)
+    else
+      @bookmarks = @bookmarks.includes(:topic, :flag).order("created_at DESC").page(params[:page]).per_page(10)
+    end
   end
 
   def show
@@ -17,7 +23,7 @@ class BookmarksController < ApplicationController
       Rails.logger.info "Extension template."
       render 'bookmarks/form_for_extension', {bookmark: @bookmark}
     end
-  # the block of code below are left for future references.
+  ### the block of code below is left for future references.
     # request.query_parameters
     # params.each do |key,value|
     #   Rails.logger.warn "Param from chrome -> #{key}: #{value}"
@@ -26,12 +32,11 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = current_user.bookmarks.build(bookmark_params)
-    # @bookmark = Bookmark.new(bookmark_params)
-    # @bookmark.user_id = current_user.id
+
     if @bookmark.save
       redirect_to bookmark_path(current_user, @bookmark), notice: "Bookmark saved."
     else
-      render :new, error: "Fix the errors."
+      render :new, notice: "Fix the errors."
     end
   end
 
@@ -47,10 +52,8 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-  end
-
-  def method
-    #code
+    @bookmark.destroy
+    redirect_to bookmarks_path(current_user), notice: "Bookmark delted."
   end
 
 private

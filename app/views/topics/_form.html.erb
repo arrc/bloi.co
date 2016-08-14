@@ -1,8 +1,14 @@
 <div class="bl_topic__form">
+
+    <% if @topic.errors.any? %>
+      <p class="bl_error">Fix the errors and try again</p>
+    <% end %>
+
     <%= form_for(topic, url: url) do |f| %>
 
       <%= f.label "Topic name" %>
       <%= f.text_field :name, placeholder: "name" %>
+      <p class="help-text bl_error"><%= @topic.errors[:name].first %></p>
 
       <%= f.label "Topic description" %>
       <%= f.text_field :description, placeholder: "description" %>

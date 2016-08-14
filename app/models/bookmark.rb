@@ -24,8 +24,13 @@ class Bookmark < ApplicationRecord
   friendly_id :title, use: [:slugged, :finders]
 
   validates :title, presence: { message: "title cannot be blank." }
-  validates :url, presence: { message: "url cannot be blank." }
-  validates :url, uniqueness: { scope: [:user_id, :topic_id] }
+  validates :url, presence: { message: "You must enter some url." }
+  validates :url, uniqueness: { scope: [:user_id, :topic_id], message: "you've already bookmarked this page." }
+
+  def self.search(search)
+    where("title LIKE ?", "%#{search}%")
+    where("url LIKE ?", "%#{search}%")
+  end
 
   # def topic_name
   #   topic.try(:name)

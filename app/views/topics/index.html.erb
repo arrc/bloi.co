@@ -3,7 +3,7 @@
 <div class="row bl_tools__wrapper clearfix">
     <section class="float-left">
         <div class="bl_tools__count--wrapper">
-            <span><%= current_user.topics.count %></span>
+            <span><%= @topics.count %></span>
         </div>
         <div class="bl_tools__new--wrapper">
           <%= link_to "Create new topic", new_topic_path(current_user) %>
@@ -11,12 +11,14 @@
         </div>
     </section>
     <section class="float-right">
-        <input type="text" class="bl_tools__search" placeholder="search">
+      <%= form_tag(topics_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "search", class: "bl_tools__search" %>
+      <% end %>
     </section>
 </div>
 
 <div class="row bl_topics__list">
-  <% if @topics.empty? %>
+  <% if @topics.empty?  && !params[:search].present?  %>
     <div class="bl_topics__empty">
       <h4 class="bl_tp_empty__lead">You don't seem to have any topics.</h4>
       <p class="bl_tp_empty__link"><%= link_to "Create new", new_topic_path(current_user) %></p>

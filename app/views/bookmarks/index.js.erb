@@ -1,6 +1,7 @@
 $('.bl_bookmarks__list').append('<%= j render(@bookmarks) %>');
 <% if @bookmarks.next_page %>
-  $('.pagination').replaceWith('<%= j will_paginate(@bookmarks) %>');
+  // $('.digg_pagination').replaceWith('<%= j will_paginate(@bookmarks) %>');
+  $('.digg_pagination').replaceWith('<%= j render "paginate", object: @bookmarks %>');
 <% else %>
-  $('.pagination').remove();
+  $('.digg_pagination').remove();
 <% end %>

@@ -1,8 +1,18 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+
   def index
-    @topics = Topic.friendly.where(user_id: current_user.id)
+    # TODO - search for bookmars.title & url
+    # TODO - consider pagination for topics
+    # TODO - limit urls to 5 for each topic
+    # TODO - create scopes
+    @topics = current_user.topics.includes(:bookmarks)
+    if params[:search]
+      @topics = @topics.where("name like ?", "%#{params[:search]}%")
+    else
+      @topics
+    end
   end
 
   def show

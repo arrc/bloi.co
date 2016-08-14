@@ -8,6 +8,11 @@
   border-width: 1px;
 }
 
+.bl_error {
+  font-family: monospace;
+  color: salmon !important;
+}
+
 // simple_form_for styles for error notification.
 .alert-box {
   font-weight: bold;
@@ -17,4 +22,13 @@
 // simple_form_for styles for error fields.
 .error {
   color: red;
+}
+
+// For will_paginate
+.digg_pagination {
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'ws-reg';
+  color: darkgray;
+  font-size: rem-calc(14);
 }
