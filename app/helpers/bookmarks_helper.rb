@@ -5,11 +5,11 @@ module BookmarksHelper
   end
 
   def flag_color(flag)
-    if flag == 1 # important
+    if flag.name == "important" # important
       "bl_bookmarks__item--flag__important ion-record"
-    elsif flag == 2 # very important
+    elsif flag.name == "very important" # very important
       "bl_bookmarks__item--flag__very-important ion-record"
-    elsif flag == 3 # normal
+    elsif flag.name == "normal" # normal
       "bl_bookmarks__item--flag__normal ion-record"
     end
   end
