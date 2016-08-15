@@ -17,7 +17,6 @@
 #         new_user_session GET    /login(.:format)                        users/sessions#new
 #             user_session POST   /login(.:format)                        users/sessions#create
 #     destroy_user_session DELETE /logout(.:format)                       users/sessions#destroy
-#            bookmarks_new GET    /bookmarks/new(.:format)                bookmarks#new
 #                    about GET    /about(.:format)                        pages#about
 #                  contact GET    /contact(.:format)                      pages#contact
 #                      faq GET    /faq(.:format)                          pages#faq
@@ -42,8 +41,6 @@
 #
 
 Rails.application.routes.draw do
-  get 'users/show'
-
   root 'pages#home'
 
 # Devise
@@ -57,21 +54,15 @@ Rails.application.routes.draw do
     delete "logout" => "users/sessions#destroy", as: :destroy_user_session
   end
 
-#
-
-get 'bookmarks/new', to: "bookmarks#new"
-
 # Static pages
   %w[about contact faq help].each do |page|
     get page, controller: "pages", action: page
   end
 
+# bookmarks and topics routes
   scope ":username" do
     get '', to: "users#show"
     resources :bookmarks
     resources :topics
-    # resources :pages
   end
-
-  # get '/:username', :controller => 'users', :action => 'show'
 end

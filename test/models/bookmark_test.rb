@@ -3,14 +3,15 @@
 # Table name: bookmarks
 #
 #  id          :integer          not null, primary key
-#  url         :string(255)
-#  title       :string(255)
-#  description :text(65535)
+#  url         :string
+#  title       :string
+#  description :text
 #  flag_id     :integer
 #  topic_id    :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  user_id     :integer
+#  slug        :string
 #
 
 require 'test_helper'

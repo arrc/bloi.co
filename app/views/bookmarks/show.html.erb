@@ -1,4 +1,4 @@
-<%= page_title "Bloi - #{@bookmark.title if @bookmark.title.present? }" %>
+<%= page_title "Bloi - #{@bookmark.title}" %>
 
 <div class="row bl_bookmarks__show">
 
@@ -6,6 +6,7 @@
   <% if @bookmark.title.present? %>
       <h5 class="bl_bookmarks__show--title"><%= @bookmark.title %></h5>
   <% end %>
+  
   <!-- Url -->
     <p class="bl_bookmarks__show--url"><a href="<%= @bookmark.url %>"> <%= @bookmark.url %> </a></p>
 
@@ -33,6 +34,6 @@
 <div class="bl_bookmarks__show--actions">
   <ul class="menu simple">
     <li><%= link_to "Edit", edit_bookmark_path(current_user, @bookmark) %></li>
-    <li><%= link_to 'Destroy', bookmark_path(current_user, @bookmark), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    <li><%= link_to 'Delete', bookmark_path(current_user, @bookmark), method: :delete, data: { confirm: 'Are you sure?' } %></li>
   </ul>
 </div>

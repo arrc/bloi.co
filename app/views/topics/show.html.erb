@@ -30,6 +30,6 @@
 <div class="bl_topics__show--actions">
   <ul class="menu simple">
     <li><%= link_to "Edit", edit_topic_path(current_user, @topic) %></li>
-    <li><%= link_to 'Destroy', topic_path(current_user, @topic), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    <li><%= link_to 'Delete', topic_path(current_user, @topic), method: :delete, data: { confirm: 'Are you sure?' } %></li>
   </ul>
 </div>
