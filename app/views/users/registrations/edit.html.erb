@@ -31,6 +31,7 @@
 
       <div class="form-inputs">
         <label>Profile image</label>
+        <%= image_tag(current_user.profile_picture.small.url) if current_user.profile_picture? %>
         <%= f.file_field :profile_picture %>
         <%= f.hidden_field :profile_picture_cache %>
 

@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
     # added_attrs = [:username, :email, :password, :password_confirmation, :remember_me, :profile_picture]
     devise_parameter_sanitizer.permit :sign_up, keys: [:username, :email, :password, :password_confirmation, :remember_me, :profile_picture]
     devise_parameter_sanitizer.permit :sign_in, keys: [:username, :password, :password_confirmation, :remember_me, :profile_picture]
-    devise_parameter_sanitizer.permit :account_update, keys: [:email, :password, :current_password, :profile_picture, :profile_picture_cache]
+    devise_parameter_sanitizer.permit :account_update, keys: [:email, :password, :current_password, :profile_picture, :profile_picture_cache, :profile_picture_cache]
   end
 end
