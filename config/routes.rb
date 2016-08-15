@@ -59,6 +59,7 @@ Rails.application.routes.draw do
     get page, controller: "pages", action: page
   end
 
+  get 'bookmarks/new', to: "bookmarks#new"
 # bookmarks and topics routes
   scope ":username" do
     get '', to: "users#show"

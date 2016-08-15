@@ -5,11 +5,8 @@ set :application, 'bloiapp'
 set :repo_url, 'git@github.com:arrc/bloi.co.git'
 set :deploy_to, '/opt/www/bloiapp'
 set :user, 'deployer'
-set :linked_dirs, %w{log uploads tmp/pids tmp/cache tmp/sockets}
+set :linked_dirs, %w{log tmp/uploads tmp/pids tmp/cache tmp/sockets}
 append :linked_files, 'config/database.yml', 'config/secrets.yml', 'config/application.yml'
-
-# Default value for linked_dirs is []
-# append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
