@@ -5,7 +5,7 @@
   </head>
 
   <body id="<%= params[:controller].parameterize %>_controller">
-
+    <%= render "layouts/notifications" %>
     <div class="bl_header">
       <%= render "layouts/navbar" %>
     </div>
@@ -13,23 +13,7 @@
 
     <div class="row bl_content__wrapper">
 
-      <section class="flash-messages">
-          <% if alert  %>
-            <section class="callout alert" data-closable>
-              <%= alert %>
-              <button class="close-button" type="button" data-close>
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </section>
-          <% elsif notice   %>
-            <section class="callout success" data-closable>
-              <%= notice %>
-              <button class="close-button" type="button" data-close>
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </section>
-          <% end %>
-      </section>
+
 
       <!-- <section class="large-12 large-centered columns">
         <%#= yield %>
@@ -55,6 +39,8 @@
         reset: true,
         useDelay: 'always',
       });
+
+      
 
       // select2
       // $(document).ready(function() {

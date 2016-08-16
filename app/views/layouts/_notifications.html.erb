@@ -1,0 +1,9 @@
+<% if alert  %>
+  <div class="bl_flash_messages">
+    <p class="bl_flash_messages--alert"><%= alert %></p>
+  </div>
+<% elsif notice  %>
+  <div class="bl_flash_messages">
+    <p class="bl_flash_messages--notice"><%= notice %></p>
+  </div>
+<% end %>
