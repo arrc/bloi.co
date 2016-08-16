@@ -1,12 +1,12 @@
 <%= page_title "Bloi - #{@bookmark.title}" %>
 
-<div class="row bl_bookmarks__show">
+<div class="row columns  bl_bookmarks__show">
 
   <!-- Title -->
   <% if @bookmark.title.present? %>
       <h5 class="bl_bookmarks__show--title"><%= @bookmark.title %></h5>
   <% end %>
-  
+
   <!-- Url -->
     <p class="bl_bookmarks__show--url"><a href="<%= @bookmark.url %>"> <%= @bookmark.url %> </a></p>
 

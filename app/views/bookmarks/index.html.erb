@@ -1,6 +1,6 @@
 <%= page_title "Bloi - Bookmarks" %>
 
-<div class="row bl_tools__wrapper clearfix">
+<div class="row columns bl_tools__wrapper clearfix">
     <section class="float-left">
         <div class="bl_tools__count--wrapper">
             <%= @bookmarks.count %>
@@ -14,7 +14,7 @@
 </div>
 
 
-<div class="row bl_bookmarks__list">
+<div class="row columns  bl_bookmarks__list">
   <% if @bookmarks.empty? && !params[:search].present? %>
     <div class="bl_bookmarks__empty">
       <h4 class="bl_bm_empty__lead">You don't seem to have any bookmarks.</h4>

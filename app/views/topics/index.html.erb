@@ -1,6 +1,6 @@
 <%= page_title "Topics" %>
 
-<div class="row bl_tools__wrapper clearfix">
+<div class="row columns  bl_tools__wrapper clearfix">
     <section class="float-left">
         <div class="bl_tools__count--wrapper">
             <span><%= @topics.count %></span>
@@ -17,7 +17,7 @@
     </section>
 </div>
 
-<div class="row bl_topics__list">
+<div class="row columns  bl_topics__list">
   <% if @topics.empty?  && !params[:search].present?  %>
     <div class="bl_topics__empty">
       <h4 class="bl_tp_empty__lead">You don't seem to have any topics.</h4>
