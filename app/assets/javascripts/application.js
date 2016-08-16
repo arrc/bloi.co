@@ -16,6 +16,7 @@
 //= require select2
 //= require turbolinks
 //= require noty
+//= require scrollreveal
 //= require_tree .
 
 $ = jQuery
@@ -24,3 +25,4 @@ $.noty.defaults.timeout = 1000
 $.noty.defaults.layout = 'top'
 $.noty.defaults.theme = 'relax'
 $.noty.defaults.type = 'alert'
+window.sr = ScrollReveal();

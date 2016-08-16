@@ -6,6 +6,10 @@
         border-radius: 4px;
         color: lighten($color-secondary, 20);
 
+        &:hover {
+          background-color: ghostwhite;
+        }
+
          &--title {
             font-family: 'qs-reg';
             color: darken($color-primary, 10);

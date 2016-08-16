@@ -18,6 +18,7 @@ gem "fog"
 gem "mini_magick"
 gem 'rails-assets-ionicons', source: 'https://rails-assets.org'
 gem 'rails-assets-noty', source: 'https://rails-assets.org'
+gem 'rails-assets-scrollreveal', source: 'https://rails-assets.org'
 gem 'will_paginate'
 gem 'unicorn', group: :production
 #---------------------------- CUSTOM END
