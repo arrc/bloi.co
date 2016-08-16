@@ -1,0 +1,27 @@
+.bl_footer {
+  text-align: center;
+  font-family: 'ws-li';
+  .bl_footer__menu {
+    font-size: rem-calc(11);
+    a {color: darkgray;}
+  }
+
+  .bl_footer__copyright {
+    font-size: rem-calc(12);
+    margin-top: 3px;
+    color: goldenrod;
+    p {
+      margin-bottom: 0;
+    }
+
+    p .arrc {
+      font-style: italic;
+      a { color: inherit; }
+    }
+  }
+
+  .bl_footer__credits {
+    font-size: rem-calc(10);
+    a {color: gray;}
+  }
+}
