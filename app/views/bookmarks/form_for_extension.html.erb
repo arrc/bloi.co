@@ -1,5 +1,7 @@
 <div class="row columns  bl_bookmark__new--extension">
-
+    <section class="bl_bookmark__new--extension__chrome--icon">
+      <span class="ion-social-chrome-outline" title="thank you for using chrom extension :)"></span>
+    </section>
     <div class="bl_bookmark__new--extension__form">
       <%= form_for(@bookmark, url: bookmarks_path(current_user)) do |f| %>
 
@@ -15,8 +17,12 @@
         <%= f.label :flag %>
         <%= f.collection_radio_buttons :flag_id, Flag.all, :id, :name%>
 
-        <%= f.label :topic %>
+        <%= f.label :topic, class: "topic_label" %>
+        <p class="help-text">choose existing or <span class="bl_bookmark__new--extension__form--new_topic--toggle">create new topic</span></p>
         <%= f.collection_select :topic_id, Topic.where(user_id: current_user), :id, :name, {include_blank: true}, {id: "topic-select"} %>
+
+
+        <%= text_field_tag :topic_name, nil, placeholder: "new topic name", class: "bl_bookmark__new--extension__form--new_topic--input" %>
 
         <%#= f.collection_select :topic_name, Topic.where(user_id: current_user), :name, :name, {include_blank: true}, {id: "topic-select"} %>
 

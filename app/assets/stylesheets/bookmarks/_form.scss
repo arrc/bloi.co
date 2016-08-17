@@ -1,16 +1,27 @@
-.bl_bookmark__form {
+.bl_bookmark__form, .bl_bookmark__new--extension__form {
   margin-top: 20px;
   font-family: 'ws-reg';
   color: darkgray;
 
   label {
-    color: darkgray;
+    color: gray;
     font-family: 'qs-reg';
+    font-weight: bold;
+    font-size: rem-calc(16);
   }
 }
 
 .bl_bookmark__new--extension {
+  &__chrome--icon {
+    text-align: center;
+    font-size: rem-calc(50);
+    color: lighten($primary-color, 10);
 
+    &:hover {
+      color: lighten($primary-color, 30);
+      cursor: pointer;
+    }
+  }
 }
 
 .bl_bookmark__new, .bl_bookmark__edit, .bl_bookmark__new--extension {
@@ -20,4 +31,14 @@
     font-family: 'qs-reg';
     color: darkgray;
   }
+}
+
+.bl_bookmark__new--extension__form--new_topic--toggle {
+  cursor: pointer;
+  font-style: italic;
+  color: blue;
+}
+
+.bl_bookmark__new--extension__form--new_topic--input {
+  margin-bottom: 0 !important;
 }
