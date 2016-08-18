@@ -9,6 +9,12 @@
     font-weight: bold;
     font-size: rem-calc(16);
   }
+
+  input[type="radio"] + label, input[type="text"], input[type="url"] {
+    color: #444444;
+    font-style: italic;
+    font-weight: 100;
+  }
 }
 
 .bl_bookmark__new--extension {

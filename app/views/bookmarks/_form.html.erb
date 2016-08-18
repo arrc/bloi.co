@@ -2,7 +2,7 @@
     <% if @bookmark.errors.any? %>
       <p class="bl_error">Fix the errors and try again</p>
     <% end %>
-    
+
     <%= form_for(bookmark, url: url) do |f| %>
       <%= f.label :title %>
       <%= f.text_field :title, placeholder: "title" %>
@@ -26,6 +26,6 @@
       <%= f.hidden_field :favicon, value: params[:favIcon] %>
       <%= f.hidden_field :favicon, value: params[:title] %>
       <br>
-      <%= f.submit "Create", { class: "button success"} %>
+      <%= f.submit "save", { class: "button secondary"} %>
     <% end %>
 </div>
