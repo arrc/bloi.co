@@ -23,6 +23,10 @@
 }
 
 .bl_bookmark__new--extension {
+  .bl_favicon img {
+    width: 50px;
+    height: 50px;
+  }
   &__chrome--icon {
     text-align: center;
     font-size: rem-calc(50);

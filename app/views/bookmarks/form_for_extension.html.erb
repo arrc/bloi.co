@@ -1,6 +1,10 @@
 <div class="row columns  bl_bookmark__new--extension">
     <section class="bl_bookmark__new--extension__chrome--icon">
-      <span class="ion-social-chrome-outline" title="thank you for using chrom extension :)"></span>
+      <% if params[:favicon]%>
+        <span class="bl_favicon"><%= image_tag params[:favicon] %></span>
+      <% else %>
+        <span class="ion-social-chrome-outline" title="thank you for using chrom extension :)"></span>
+      <% end %>
     </section>
     <div class="bl_bookmark__new--extension__form">
       <%= form_for(@bookmark, url: bookmarks_path(current_user)) do |f| %>
