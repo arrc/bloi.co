@@ -32,8 +32,13 @@ class BookmarksController < ApplicationController
   def create
     # binding.pry
     @bookmark = current_user.bookmarks.build(bookmark_params)
-    new_topic = current_user.topics.find_or_create_by(name: params[:topic_name])
-    @bookmark.topic_id = new_topic.id
+
+    # ensure 'topic_name' exists otherwise it sets the 'topic_id' to nil
+    if params[:topic_name].present?
+      new_topic = current_user.topics.find_or_create_by(name: params[:topic_name])
+      @bookmark.topic_id = new_topic.id
+    end
+
     if @bookmark.save
       redirect_to bookmark_path(current_user, @bookmark), notice: "Bookmark saved."
     else
