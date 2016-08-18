@@ -1,9 +1,7 @@
-
 <header class="bl_primary_header">
     <div class="row">
         <section class="bl_primary_header__wrapper clearfix">
             <div class="bl_primary_header__wrapper--logo float-left">
-                <!-- <a href="/">Bloi</a> -->
                 <% if user_signed_in? %>
                   <%= link_to 'Bloi', bookmarks_path(current_user) %>
                 <% else %>
@@ -29,9 +27,7 @@
                         <li class="<%= current_class?(bookmarks_path(current_user)) %>"><%= link_to "Bookmarks", bookmarks_path(current_user) %></li>
                         <li class="<%= current_class?(topics_path(current_user)) %>"><%= link_to "Topics", topics_path(current_user) %></li>
                       <% else %>
-                        <li class="bl_tb_intro">A very minimilistic and simple bookmark store.</li>
-                        <li><%= link_to "Sign up", new_user_registration_path %></li>
-                        <li><%= link_to 'Login', new_user_session_path %></li>
+                        <li class="bl_tb_intro"><a>A bare <em>minimal</em>, <em>no fuss</em> &amp; <em>simple</em> bookmarking application.</a></li>
                       <% end %>
                     </ul>
                 </div>
@@ -43,6 +39,9 @@
                             <i class="ion-plus-round"></i>
                           <% end %>
                         </li>
+                      <% else %>
+                        <li><%= link_to "Sign up", new_user_registration_path %></li>
+                        <li><%= link_to 'Login', new_user_session_path %></li>
                       <% end %>
                     </ul>
                 </div>
