@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160813153343) do
+ActiveRecord::Schema.define(version: 20160818035824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20160813153343) do
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
     t.string   "slug"
+    t.string   "hostname"
+    t.string   "favicon"
     t.index ["flag_id"], name: "index_bookmarks_on_flag_id", using: :btree
     t.index ["slug"], name: "index_bookmarks_on_slug", unique: true, using: :btree
     t.index ["topic_id"], name: "index_bookmarks_on_topic_id", using: :btree

@@ -10,6 +10,11 @@
     font-size: rem-calc(16);
   }
 
+  label.topic_label + .help-text {
+    color: #444;
+    margin-top: 3px;
+  }
+
   input[type="radio"] + label, input[type="text"], input[type="url"] {
     color: #444444;
     font-style: italic;

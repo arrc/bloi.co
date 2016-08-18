@@ -4,7 +4,7 @@
     <%= link_to bookmark_path(current_user, bookmark), class: "bl_bookmarks__item--a-tag" do %>
       <h5 class="bl_bookmarks__item--title">
         <span class="<%= flag_color(bookmark.flag) if bookmark.flag.present? %>" title="<%= bookmark.flag.name if bookmark.flag.present? %>">
-        <!-- <span><%#= link_to %></span> -->
+        <span class="bl_favicon"><%= image_tag bookmark.favicon if bookmark.favicon? %></span>
         </span><%= bookmark.title %></h5>
     <% end %>
   <% end %>

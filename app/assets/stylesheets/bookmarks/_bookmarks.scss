@@ -6,6 +6,11 @@
         border-radius: 4px;
         color: lighten($color-secondary, 20);
 
+        .bl_favicon {
+          width: 15px;
+          height: 15px;
+        }
+
         &:hover {
           background-color: ghostwhite;
         }

@@ -26,8 +26,8 @@
 
         <%#= f.collection_select :topic_name, Topic.where(user_id: current_user), :name, :name, {include_blank: true}, {id: "topic-select"} %>
 
-        <%= f.hidden_field :favicon, value: params[:favIcon] %>
-        <%= f.hidden_field :favicon, value: params[:title] %>
+        <%= f.hidden_field :favicon, value: params[:favicon] %>
+        <%= f.hidden_field :hostname, value: params[:hostname] %>
         <br>
         <%= f.submit "save", { class: "button secondary"} %>
       <% end %>

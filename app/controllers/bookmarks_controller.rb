@@ -64,6 +64,6 @@ private
   end
 
   def bookmark_params
-    params.require(:bookmark).permit(:url, :title, :flag_id, :topic_id, :topic_name, :description, :slug, topics_attributes: [:id, :name])
+    params.require(:bookmark).permit(:url, :title, :flag_id, :favicon, :hostname, :topic_id, :topic_name, :description, :slug, topics_attributes: [:id, :name])
   end
 end
