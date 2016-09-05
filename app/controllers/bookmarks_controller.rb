@@ -19,7 +19,6 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new
 
     if params[:url]
-      Rails.logger.info "Extension template."
       render 'bookmarks/form_for_extension', {bookmark: @bookmark}
     end
   ### the block of code below is left for future references.
