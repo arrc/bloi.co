@@ -1,15 +1,79 @@
-<div class="row columns bl_intro_section">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero molestias est animi assumenda sunt facere in aliquid, a architecto placeat ab voluptatem quas laborum, dolorum quo obcaecati ea, porro alias.</p>
-</div>
-<div class="row columns bl_bookmarks_section">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero molestias est animi assumenda sunt facere in aliquid, a architecto placeat ab voluptatem quas laborum, dolorum quo obcaecati ea, porro alias.</p>
-</div>
-<div class="row columns bl_new_topic_section">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero molestias est animi assumenda sunt facere in aliquid, a architecto placeat ab voluptatem quas laborum, dolorum quo obcaecati ea, porro alias.</p>
-</div>
-<div class="row columns bl_topics_section">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero molestias est animi assumenda sunt facere in aliquid, a architecto placeat ab voluptatem quas laborum, dolorum quo obcaecati ea, porro alias.</p>
-</div>
-<div class="row columns bl_extension_section">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero molestias est animi assumenda sunt facere in aliquid, a architecto placeat ab voluptatem quas laborum, dolorum quo obcaecati ea, porro alias.</p>
-</div>
+<section class="bl_home_sections">
+    <div class="bl_section_wrapper bl_intro_section">
+        <div class="row columns bl_section">
+          <div class="bl_copy">
+              <p class="bl_lead">Welcome to the new age bookmarking app.</p>
+              <p class="bl_sub">A lean &amp; simple tool for collecting the gems of web. </p>
+          </div>
+          <div class="bl_screenshot">
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/F43HrAdKVzU" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+    </div>
+
+<!--  bookmarks  -->
+    <div class="bl_section_wrapper bl_bookmarks_section">
+        <div class="row columns bl_section ">
+            <div class="bl_copy">
+                <p class="bl_lead">Clean and simple interface.</p>
+                <p class="bl_sub">Browse, search, &amp; edit your bookmarks. </p>
+            </div>
+            <div class="bl_screenshot">
+              <%= image_tag("screenshots/bookmarks.png") %>
+            </div>
+        </div>
+    </div>
+
+<!--  new topic  -->
+    <div class="bl_section_wrapper bl_new_topic_section">
+        <div class="row columns bl_section  ">
+          <div class="bl_copy">
+                <p class="bl_lead">Organize your bookmarks with <em>topics</em>.</p>
+                <p class="bl_sub">Create <em>public</em> or <em>private</em> topics. </p>
+            </div>
+            <div class="bl_screenshot">
+              <%= image_tag("screenshots/new_topics.png") %>
+            </div>
+        </div>
+    </div>
+
+<!-- topics -->
+    <div class="bl_section_wrapper bl_topics_section">
+        <div class="row columns bl_section ">
+          <div class="bl_copy">
+                <p class="bl_lead">Browse through topics.</p>
+                <p class="bl_sub">Easily access your <em>topics</em> &amp; associated <em>bookmarks.</em> </p>
+            </div>
+            <div class="bl_screenshot">
+              <%= image_tag("screenshots/topics.png") %>
+            </div>
+        </div>
+    </div>
+
+<!--  Chroms extension  -->
+    <div class="bl_section_wrapper bl_extension_section">
+        <div class="row columns bl_section ">
+          <div class="bl_copy">
+                <p class="bl_lead">Chrome browser extension.</p>
+                <p class="bl_sub">Quickly save bookmarks using <em>"bloi remote"</em> browser extension. </p>
+            </div>
+            <div class="bl_screenshot">
+              <%= image_tag("screenshots/extension.png") %>
+            </div>
+        </div>
+    </div>
+
+<!--  Upcoming features and footer  -->
+    <div class="bl_section_wrapper bl_upcoming_section">
+        <div class="row columns bl_section">
+          <div class="bl_copy">
+                <p class="bl_lead">Upcoming features.</p>
+                <p class="bl_sub"> Bloi is rapidly evolving &amp; adding new features. </p>
+            </div>
+            <div class="bl_features_list">
+
+            </div>
+            <%= render "layouts/footer" %>
+        </div>
+    </div>
+</section>

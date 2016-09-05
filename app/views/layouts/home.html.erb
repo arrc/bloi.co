@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= render "layouts/header" %>
+  </head>
+
+  <body id="<%= params[:controller].parameterize %>_controller">
+    <%= render "layouts/notifications" %>
+    <div class="bl_header">
+      <%= render "layouts/navbar" %>
+    </div>
+
+
+    <div class="bl_home_wrapper">
+
+      <%= yield %>
+
+    </div>
+
+    <script type="text/javascript">
+      $(function(){ $(document).foundation(); });
+      // window.sr = ScrollReveal();
+
+      sr.reveal('.bl_bookmarks__item, .bl_topics__item', {
+        origin: 'bottom',
+        delay: 100,
+        easing : 'cubic-bezier(0.6, 0.2, 0.1, 1)',
+        duration: 400, scale: 0.9 ,
+        // container: '.bl_bookmarks__list',
+        reset: true,
+        useDelay: 'always',
+      });
+
+    </script>
+  </body>
+</html>

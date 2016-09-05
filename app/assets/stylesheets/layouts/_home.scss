@@ -1,0 +1,84 @@
+// body {
+//     background-image: url(/images/bloi_pattern_bg.png);
+// }
+
+.bl_home_sections {
+    .bl_section {
+        height: 100vh;
+//        border-bottom: 1px solid $primary-color;
+//        margin-bottom: -1px;
+        .bl_copy {
+            height: 20%;
+            line-height: 20%;
+
+            p {
+                margin-bottom: 0;
+                font-family: 'qs-reg';
+                color: rgba(128,128,128,0.8);
+                padding: 10px;
+                font-size: rem-calc(22px);
+                font-weight: 600;
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            .bl_lead {
+
+            }
+
+            .bl_sub {
+                font-size: rem-calc(16);
+                font-weight: normal;
+            }
+        }
+
+    }
+
+    .bl_section_wrapper:first-child, .bl_section_wrapper:first-child .bl_section {
+        height: calc(100vh - 120px);
+    }
+
+    .bl_section_wrapper:last-child, .bl_section_wrapper:last-child .bl_section {
+        height: calc(100vh - 40px);
+    }
+
+    .bl_screenshot {
+        height: 80%;
+        vertical-align: baseline;
+        margin: 0 auto;
+        img, iframe {
+            display: block;
+            margin: 0 auto;
+            height: 100%;
+            vertical-align: bottom;
+        }
+
+    }
+}
+.bl_intro_section {
+    background-color: rgba(lavender, 0.4);
+}
+.bl_bookmarks_section {
+    background-color: rgba(powderblue, 0.4);
+}
+.bl_new_topic_section {
+    background-color: rgba(gainsboro, 0.4);
+}
+.bl_topics_section {
+    background-color: rgba(beige, 0.4);
+}
+.bl_extension_section {
+    background-color: rgba(palegoldenrod, 0.4);
+}
+
+
+.bl_new_topic_section .bl_screenshot img {
+    width: 100%;
+    height: auto;
+}
+
+.bl_upcoming_section {
+    .bl_features_list {
+        height: 80%;
+    }
+}
