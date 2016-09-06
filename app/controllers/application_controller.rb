@@ -3,8 +3,6 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  
-
   def after_sign_in_path_for(resource_or_scope)
    bookmarks_path(current_user)
   end
@@ -22,4 +20,5 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit :sign_in, keys: [:username, :password, :password_confirmation, :remember_me, :profile_picture]
     devise_parameter_sanitizer.permit :account_update, keys: [:email, :password, :current_password, :profile_picture, :profile_picture_cache, :profile_picture_cache]
   end
+
 end
