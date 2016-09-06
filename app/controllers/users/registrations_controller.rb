@@ -49,8 +49,13 @@ before_action :configure_account_update_params, only: [:update]
   end
 
   # The path used after sign up.
+  # def after_sign_up_path_for(resource)
+  #   super(resource)
+  # end
+
   def after_sign_up_path_for(resource)
-    super(resource)
+    # after_sign_in_path_for(resource)
+    bookmarks_path(current_user)
   end
 
   # The path used after sign up for inactive accounts.
