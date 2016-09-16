@@ -4,6 +4,8 @@
 <title><%= content_for?(:title) ? yield(:title) : "Bloi: minimalist bookmarking app." %></title>
 
 <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.0.2/css/hover-min.css" media="screen" title="no title" charset="utf-8">
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= csrf_meta_tags %>
 <%= render "layouts/google_analytics" %>

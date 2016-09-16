@@ -83,5 +83,26 @@
 .bl_upcoming_section {
     .bl_features_list {
         height: 80%;
+
+        .bl_i_feature {
+          height: 200px;
+          padding: 10px;
+          border-radius: 5px;
+          section {
+            font-size: rem-calc(70);
+            color: gray;
+          }
+
+          p {
+            font-family: 'qs-reg';
+            font-size: rem-calc(15);
+            color: darkgray;
+          }
+
+          &:hover {
+            cursor: pointer;
+            background-color: ghostwhite;
+          }
+        }
     }
 }
