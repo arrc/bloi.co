@@ -16,7 +16,7 @@
         <div class="float-left bl_bml__item--meta__topic">
           <% if bookmark.topic.present? %>
             <i class="ion-ios-list-outline bl_bml__item--meta__topic--icon" title="Topic name"></i>
-            <span class="bl_bml__item--meta__topic--name"><%= link_to bookmark.topic.name, topic_path(current_user, bookmark.topic) %></span>
+            <span class=" hvr-grow bl_bml__item--meta__topic--name"><%= link_to bookmark.topic.name, topic_path(current_user, bookmark.topic) %></span>
             <% if bookmark.topic.is_public? %> <i class="ion-ios-people bl_bml__item--meta__lock--icon" title="This topic is public"></i> <% end %>
           <% end %>
         </div>
