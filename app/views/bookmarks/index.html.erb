@@ -18,8 +18,8 @@
   <% if @bookmarks.empty? && !params[:search].present? %>
     <div class="bl_bookmarks__empty">
       <h4 class="bl_bm_empty__lead">You don't seem to have any bookmarks.</h4>
-      <%= link_to "https://chrome.google.com/webstore" do %><div class="bl_bm_empty__store"><%= image_tag "webstore.png" %></div><% end %>
-      <p class="bl_bm_empty__link">Download <a href="https://chrome.google.com/webstore">Bloi - chrome extention</a> to quickly save new bookmarks.</p>
+      <%= link_to "https://chrome.google.com/webstore/detail/bloi-remote/embnkiohgnkdphjimblpbijihphlllcd" do %><div class="bl_bm_empty__store"><%= image_tag "webstore.png" %></div><% end %>
+      <p class="bl_bm_empty__link">Download <a href="https://chrome.google.com/webstore/detail/bloi-remote/embnkiohgnkdphjimblpbijihphlllcd">Bloi - chrome extention</a> to quickly save new bookmarks.</p>
       <p class="bl_bm_empty__link">or</p>
       <p class="bl_bm_empty__link"><%= link_to "Create new", new_bookmark_path(current_user) %></p>
     </div>
